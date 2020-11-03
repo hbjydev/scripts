@@ -9,3 +9,4 @@ user_exists () {
     echo "User does not exist"
   fi
 }
+export -f user_exists
