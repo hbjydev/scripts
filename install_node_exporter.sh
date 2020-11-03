@@ -36,5 +36,8 @@ cat > /etc/sysconfig/node_exporter <<EOL
 OPTIONS="--collector.textfile.directory /usr/lib/node_exporter/textfile_collector --collector.processes --collector.systemd --collector.logind --collector.interrupts --collector.ksmd"
 EOL
 
+echo "kernel.perf_event_paranoid = -1" >> /etc/sysctl.conf
+sysctl -p
+
 systemctl daemon-reload
 systemctl enable --now node_exporter
