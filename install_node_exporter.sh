@@ -33,7 +33,7 @@ WantedBy=default.target
 EOL
 
 cat > /etc/sysconfig/node_exporter <<EOL
-OPTIONS="--collector.textfile.directory /var/lib/node_exporter/textfile_collector --collector.processes --collector.systemd --collector.logind --collector.interrupts --collector.ksmd"
+OPTIONS="--collector.textfile.directory /usr/lib/node_exporter/textfile_collector --collector.processes --collector.systemd --collector.logind --collector.interrupts --collector.ksmd"
 EOL
 
 systemctl daemon-reload
