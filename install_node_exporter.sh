@@ -1,10 +1,11 @@
 #!/bin/sh
+set -e
+
 version="1.0.1"
 arch="amd64"
-
 node_exporter="https://github.com/prometheus/node_exporter/releases/download/v$version/node_exporter-$version.linux-$arch.tar.gz"
 
-rm node_exporter-*.tar.gz
+rm node_exporter-*.tar.gz || true
 curl -LO "$node_exporter"
 
 tar -xzvf node_exporter-*.tar.gz
